@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {reduxForm,Field} from 'redux-form';
 
 export default class SignIn extends Component {
   render() {
@@ -8,4 +9,7 @@ export default class SignIn extends Component {
       </div>
     );
   }
+  SignIn=reduxForm({
+      form:'SignIn'
+  })(SignIn)
 }
