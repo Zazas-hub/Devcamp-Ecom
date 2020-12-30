@@ -4,7 +4,8 @@ export default class SignUp extends Component {
   render() {
     return (
       <div className="sign-up">
-        <SignUpForm className='sign-up-form'/>
+        <h1>Sign Up form your new account</h1>
+        <SignUpForm className="sign-up-form" />
       </div>
     );
   }
