@@ -15,6 +15,8 @@
     border-radius: 20px;
     color: #333333;
     font-size: 18px;
+    border-color: #00cb79;
+    outline: none;
   }
 }
 .form-button {
@@ -25,10 +27,18 @@
     background-color: #00cb79;
     font-size: 16px;
     color: white;
-    border-color: #00cb79;
-
+    border: none;
+    outline: none;
     &:focus {
       outline: none;
     }
+  }
+  .form-button-gray-button {
+    background: #999;
+    width: 137px;
+    outline: none;
+    border: none;
+    background: #999;
+    width: 137px;
   }
 }
