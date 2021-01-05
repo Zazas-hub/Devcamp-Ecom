@@ -1,7 +1,25 @@
 import { SET_NAVBAR_LINKS, SET_HEADER_LINKS } from "../actions/types";
 const INITIAL_STATE = {
-  headerLinks: [],
-  navbarLinks: [],
+  headerLinks: [
+    {
+      title: "Opps",
+      id:0
+    },
+    {
+      title: "Opps",
+      id:1
+    },
+  ],
+  navbarLinks: [
+    {
+      title: "account",
+      id:0
+    },
+    {
+      title: "purchases",
+      id:1
+    },
+  ],
 };
 
 export default function (state = INITIAL_STATE, action) {
@@ -21,4 +39,3 @@ export default function (state = INITIAL_STATE, action) {
       return state;
   }
 }
-  
