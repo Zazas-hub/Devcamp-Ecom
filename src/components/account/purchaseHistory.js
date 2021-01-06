@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 class PaymentHistory extends Component {
   render() {
-    return <div>AccountInfo</div>;
+    return <div>This is your purchaseHistory</div>;
   }
 }
 export default PaymentHistory;

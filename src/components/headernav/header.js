@@ -10,7 +10,7 @@ class Header extends Component {
             return (
               <a
                 className="header-link"
-                key={link.id}
+                key={link._id}
                 onClick={() => console.log("trying to switch tabs")}
               >
                 {link.title}
