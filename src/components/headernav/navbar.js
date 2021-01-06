@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import * as actions from "../../actions";
 class Navbar extends Component {
   render() {
     return (
@@ -9,7 +10,9 @@ class Navbar extends Component {
             <a
               className={`navbarLinks ${link.active ? "green-text" : ""}`}
               key={link._id}
-              onClick={() => console.log("trying to switch tabs")}
+              onClick={() => {
+                this.props.changeNavbarActive(link._id);
+              }}
             >
               {link.title}
             </a>
@@ -25,5 +28,5 @@ function mapStateToProps(state) {
     navbarLinks,
   };
 }
-Navbar = connect(mapStateToProps)(Navbar);
+Navbar = connect(mapStateToProps, actions)(Navbar);
 export default Navbar;

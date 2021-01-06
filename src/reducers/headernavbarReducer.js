@@ -1,35 +1,12 @@
-import React,{component} from 'react'
-import { SET_NAVBAR_LINKS, SET_HEADER_LINKS } from "../actions/types";
-import PurchaseHistory from "../components/account/purchaseHistory";
-import AccountInformation from "../components/account/accountInfo";
+import {
+  SET_NAVBAR_LINKS,
+  SET_HEADER_LINKS,
+  CHANGE_NAVBAR_ACTIVE,
+} from "../actions/types";
 
 const INITIAL_STATE = {
-  headerLinks: [
-    // {
-    //   _id: 0,
-    //   title: "Shop",
-    //   path: "/shop",
-    // },
-    // {
-    //   _id: 1,
-    //   title: "Logout",
-    //   path: "/",
-    // },
-  ],
-  navbarLinks: [
-    // {
-    //   _id: 0,
-    //   title: "Purchase History",
-    //   active: true,
-    //   component: <PurchaseHistory />,
-    // },
-    // {
-    //   _id: 1,
-    //   title: "Account Information",
-    //   active: false,
-    //   component: <AccountInformation />,
-    // },
-  ],
+  headerLinks: [],
+  navbarLinks: [],
 };
 export default function (state = INITIAL_STATE, action) {
   switch (action.type) {
@@ -42,6 +19,18 @@ export default function (state = INITIAL_STATE, action) {
       return {
         ...state,
         navbarLinks: action.payload,
+      };
+    case CHANGE_NAVBAR_ACTIVE:
+      const navbarLinks = state.navbarLinks.map((link) => {
+        link.active = false;
+        if (link._id == action.payload) {
+          link.active = true;
+        }
+        return link;
+      });
+      return {
+        ...state,
+        navbarLinks,
       };
     default:
       return state;
