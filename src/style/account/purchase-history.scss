@@ -1,12 +1,85 @@
 .purchase-history {
+  .purchase-history-content {
+    margin: 37px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   .purchase-history-page-title {
     border-bottom: 1px solid #cccccc;
   }
-  .purchase-history-border-bottom{
-      border-bottom: 1px solid #f2f2f2;
+  .purchase-history-border-bottom {
+    border-bottom: 1px solid #f2f2f2;
   }
 }
 .purchases {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fit, 80px);
+  width: 360px;
 }
 .purchase-detail {
+  width: 600px;
+  display: grid;
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  // grid-template-rows: [s] 1fr [sm] 1fr [m-s] 25px [m-e] 1fr [me] 1fr [e];
+  .purchase-detail-order-number {
+    grid-column: s/m;
+    // grid-row: s/sm;
+  }
+  .purchase-detail-order-date {
+    grid-column: s/m;
+    // grid-row: sm/m-s;
+  }
+  .purchase-detail-order-shipping {
+    grid-column: s/m;
+    // grid-row: m-e/e;
+  }
+  .purchase-detail-order-total {
+    grid-column: s/m;
+    // grid-row: s/sm;
+  }
+  .purchase-detail-order-credit-card {
+    grid-column: s/m;
+    // grid-row: sm/m-s;
+  }
+  .purchase-detail-track-shipment {
+    width: 150px;
+    justify-self: center;
+    text-decoration-line: underline;
+    color: #00cb79;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .purchase-detail-print-reciept {
+    grid-column: m/e;
+    grid-row: me/e;
+    justify-self: center;
+    text-decoration-line: underline;
+    color: #00cb79;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 50px;
+  }
+}
+.purchase-detail-label {
+  display: grid;
+  grid-template-rows: [s] 1fr [e];
+  grid-template-columns: [s] 1fr [m] 1fr [e];
+  grid-gap: 10px;
+
+  & > * {
+    grid-row: s/e;
+  }
+  .purchase-detail-label-title {
+    grid-column: s/m;
+    text-align: right;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  .purchase-detail-label-value {
+    grid-column: m/e;
+    text-align: left;
+    color: #666666;
+    font-size: 14px;
+  }
 }

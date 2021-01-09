@@ -9,9 +9,14 @@ class Purchases extends Component {
   render() {
     const { className } = this.props;
     return (
-      <div className={`${className}purchases`}>
+      <div className={`${className} purchases`}>
         {this.props.purchases.map((purchase) => {
-          return <div key={purchase._id}>{purchase.title}</div>;
+          return (
+            <a onClick={()=>this.props.setPurchaseDetail(purchase._id)} key={purchase._id}>
+              {purchase.title}
+              <img src="http://via.placeholder.com/50x50" />
+            </a>
+          );
         })}
       </div>
     );
