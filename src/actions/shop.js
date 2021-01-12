@@ -1,9 +1,8 @@
-import
- { 
-    // SET_SHOP_CATEGORIES
-    SET_NAVBAR_LINKS
-} 
- from "./types";
+import {
+  // SET_SHOP_CATEGORIES
+  SET_SHOP_PRODUCTS,
+  SET_NAVBAR_LINKS,
+} from "./types";
 export function fetchShopCategories() {
   return {
     type: SET_NAVBAR_LINKS,
@@ -35,6 +34,68 @@ export function fetchShopCategories() {
       {
         _id: 6,
         title: "Linux",
+      },
+    ],
+  };
+}
+export function fetchShopProduts() {
+  return {
+    type:  SET_SHOP_PRODUCTS,
+    payload: [
+      {
+        _id: 0,
+        title: "JavaScript in the Browser",
+        discription:
+          "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
+        price: 1.99,
+        belongsTo: [0, 1],
+      },
+      {
+        _id: 1,
+        title: "Graph Database",
+        discription:
+          "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
+        price: 1.99,
+        belongsTo: [0, 1],
+      },
+      {
+        _id: 2,
+        title: "UI/UX",
+        discription:
+          "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
+        price: 2.99,
+        belongsTo: [0, 1],
+      },
+      {
+        _id: 3,
+        title: "Full Stack Development ",
+        discription: "Wtry Lorem Ipsum has been the industry",
+        price: 4.99,
+        belongsTo: [0, 1],
+      },
+      {
+        _id: 4,
+        title: "User Interface Design",
+        discription:
+          "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
+        price: 6.99,
+        belongsTo: [0, 2],
+      },
+      {
+        _id: 5,
+        title: "Javascript Development ",
+        discription:
+          "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
+        price: 1.69,
+        belongsTo: [0, 1 ,4],
+      },
+      {
+        _id: 6,
+        title: "Advance OOOp",
+        discription:
+          "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
+        price: 1.99,
+        belongsTo: [0, 6],
       },
     ],
   };
