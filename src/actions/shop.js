@@ -1,11 +1,21 @@
 import {
-  // SET_SHOP_CATEGORIES
+  SET_SHOP_CATEGORIES,
   SET_SHOP_PRODUCTS,
   SET_NAVBAR_LINKS,
+  FILTER_PRODUCTS_WITH_CATEGORY_ID,
 } from "./types";
-export function fetchShopCategories() {
+
+export function filterProductsWithCategoryId(_id) {
+  console.log(_id,'something');
   return {
-    type: SET_NAVBAR_LINKS,
+    type: FILTER_PRODUCTS_WITH_CATEGORY_ID,
+    payload: _id,
+  };
+}
+export function fetchShopCategories() {
+  return ({
+    type: SET_SHOP_CATEGORIES,
+
     payload: [
       {
         _id: 0,
@@ -36,11 +46,12 @@ export function fetchShopCategories() {
         title: "Linux",
       },
     ],
-  };
+  });
 }
+
 export function fetchShopProduts() {
   return {
-    type:  SET_SHOP_PRODUCTS,
+    type: SET_SHOP_PRODUCTS,
     payload: [
       {
         _id: 0,
@@ -87,7 +98,7 @@ export function fetchShopProduts() {
         discription:
           "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
         price: 1.69,
-        belongsTo: [0, 1 ,4],
+        belongsTo: [0, 1, 4],
       },
       {
         _id: 6,

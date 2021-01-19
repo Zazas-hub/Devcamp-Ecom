@@ -1,5 +1,9 @@
 import { fetchUserPurchases, setPurchaseDetail } from "./user";
-import { fetchShopCategories, fetchShopProduts } from "./shop";
+import {
+  fetchShopCategories,
+  fetchShopProduts,
+  filterProductsWithCategoryId,
+} from "./shop";
 import {
   setHeaderLinks,
   setNavbarLinks,
@@ -13,4 +17,5 @@ export {
   setPurchaseDetail,
   fetchShopCategories,
   fetchShopProduts,
+  filterProductsWithCategoryId,
 };
