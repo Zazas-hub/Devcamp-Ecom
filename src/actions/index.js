@@ -3,6 +3,7 @@ import {
   fetchShopCategories,
   fetchShopProduts,
   filterProductsWithCategoryId,
+  filterProductsWithQuery,
 } from "./shop";
 import {
   setHeaderLinks,
@@ -18,4 +19,5 @@ export {
   fetchShopCategories,
   fetchShopProduts,
   filterProductsWithCategoryId,
+  filterProductsWithQuery,
 };

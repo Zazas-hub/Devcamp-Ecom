@@ -2,11 +2,12 @@ import {
   SET_SHOP_PRODUCTS,
   SET_SHOP_CATEGORIES,
   FILTER_PRODUCTS_WITH_CATEGORY_ID,
+  FILTER_PRODUCTS_WITH_QUERY,
 } from "../actions/types";
 
 const INITIAL_STATE = {
   categories: [],
-  filteredProducts:[],
+  filteredProducts: [],
   products: [],
 };
 export default function (state = INITIAL_STATE, action) {
@@ -15,24 +16,36 @@ export default function (state = INITIAL_STATE, action) {
       const categories = action.payload;
       return {
         ...state,
-        categories
-      }
+        categories,
+      };
     case SET_SHOP_PRODUCTS:
       return {
         ...state,
         products: action.payload,
       };
     case FILTER_PRODUCTS_WITH_CATEGORY_ID:
-      var  filteredProducts =[]
-      state.products.map(product=>{
-        if (product.belongsTo.includes(action.payload)){
+      var filteredProducts = [];
+      state.products.map((product) => {
+        if (product.belongsTo.includes(action.payload)) {
           filteredProducts.push(product);
         }
-      })
+      });
+      return {
+        ...state,
+        filteredProducts,
+      };
+    case FILTER_PRODUCTS_WITH_QUERY:
+      var filteredProducts = [];
+      state.products.map((product) => {
+        if (product.title.toLowerCase().includes(action.payload.query.toLowerCase())) {
+          filteredProducts.push(product);
+        }
+      }) 
+      console.log(action.payload.query)
       return {
         ...state,
         filteredProducts
-      };
+      }
     default:
       return state;
   }

@@ -3,8 +3,14 @@ import {
   SET_SHOP_PRODUCTS,
   SET_NAVBAR_LINKS,
   FILTER_PRODUCTS_WITH_CATEGORY_ID,
+  FILTER_PRODUCTS_WITH_QUERY
 } from "./types";
-
+export function filterProductsWithQuery(fields){
+  return({
+    type:FILTER_PRODUCTS_WITH_QUERY,
+    payload:fields
+  })
+}
 export function filterProductsWithCategoryId(_id) {
   console.log(_id,'something');
   return {
