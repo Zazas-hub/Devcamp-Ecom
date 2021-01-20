@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 
 import ShopSearchBar from "./shopSearchbar";
+import ShopProduct from './shopProduct'
 class Shop extends Component {
   componentDidMount() {
     const headerLinks = [
@@ -36,12 +37,7 @@ class Shop extends Component {
         <div className="shop-products">
           {this.props.filteredProducts.map((product) => {
             return (
-              <div key={product._id} className="shop-product">
-                <div className="shop-product-title">{product.title}</div>
-                <div className="shop-product-discription">
-                  {product.discription}
-                </div>
-              </div>
+             <ShopProduct {...product} key={product._id}/>
             );
           })}
         </div>
