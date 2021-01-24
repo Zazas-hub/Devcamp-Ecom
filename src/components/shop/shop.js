@@ -33,8 +33,8 @@ class Shop extends Component {
   render() {
     return (
       <div className="shop">
-        <ShopSearchBar onSubmit={this.onSubmit} className="shop-search-bar" />
-        <div className="shop-products">
+        <ShopSearchBar onSubmit={this.onSubmit} className="shop__search-bar" />
+        <div className="shop__products">
           {this.props.filteredProducts.map((product) => {
             return (
              <ShopProduct {...product} key={product._id}/>
