@@ -1,4 +1,8 @@
-import { fetchUserPurchases, setPurchaseDetail } from "./user";
+import {
+  fetchUserPurchases,
+  setPurchaseDetail,
+  fetchCartProducts,
+} from "./user";
 import {
   fetchShopCategories,
   fetchShopProduts,
@@ -20,4 +24,5 @@ export {
   fetchShopProduts,
   filterProductsWithCategoryId,
   filterProductsWithQuery,
+  fetchCartProducts,
 };
