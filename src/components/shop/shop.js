@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 
 import ShopSearchBar from "./shopSearchbar";
-import ShopProduct from './shopProduct'
-import ShopCart from './shopCart'
+import ShopProduct from "./shopProduct";
+import ShopCart from "./shopCart";
+import CartButton from "./cartButton";
 
 class Shop extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
-      showCart:true,
-    }
+    this.state = {
+      showCart: true,
+    };
   }
   componentDidMount() {
     const headerLinks = [
@@ -23,7 +24,6 @@ class Shop extends Component {
     ];
     this.props.setHeaderLinks(headerLinks);
     this.props.fetchShopCategories();
-
     this.props.fetchShopProduts();
   }
   shouldComponentUpdate(nextProps) {
@@ -34,22 +34,34 @@ class Shop extends Component {
     }
     return true;
   }
-
-  onSubmit=(fields)=> {
+  onSubmit = (fields) => {
     this.props.filterProductsWithQuery(fields);
-  }
+  };
+  handleAddToCart = () => {
+    if (
+      document.getElementById("shop-cart").classList.contains("cart-hidden")
+    ) {
+      document.getElementById("shop-cart").classList.remove("cart-hidden");
+      document.getElementById("cart-button").classList.add("cart-hidden");
+    } else {
+      document.getElementById("shop-cart").classList.add("cart-hidden");
+    }
+  };
   render() {
     return (
       <div className="shop">
         <ShopSearchBar onSubmit={this.onSubmit} className="shop__search-bar" />
         <div className="shop__products">
           {this.props.filteredProducts.map((product) => {
-            return (
-             <ShopProduct {...product} key={product._id}/>
-            );
+            return <ShopProduct {...product} key={product._id} />;
           })}
         </div>
-        {this.state.showCart? <ShopCart className='shop__cart'/>:''}
+        {this.state.showCart ? <ShopCart className="shop__cart" /> : ""}
+        <CartButton
+          onClick={this.handleAddToCart}
+          className="shop__cart-button"
+          icon="fas fa-cart-plus"
+        />
       </div>
     );
   }
