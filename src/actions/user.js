@@ -2,13 +2,23 @@ import {
   SET_USER_PURCHASES,
   SET_PURCHASE_DETAIL,
   SET_CART_PRODUCTS,
+  ADD_CART_PRODUCT,
 } from "./types";
+
+export function addCartProduct(product) {
+  return {
+    type: ADD_CART_PRODUCT,
+    payload: product,
+  };
+}
+
 export function setPurchaseDetail(_id) {
   return {
     type: SET_PURCHASE_DETAIL,
     payload: _id,
   };
 }
+
 export function fetchCartProducts() {
   return {
     type: SET_CART_PRODUCTS,
@@ -22,6 +32,7 @@ export function fetchCartProducts() {
             "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
           price: 1.99,
           belongsTo: [0, 1],
+          imageUrl:"https://picsum.photos/200/300",
         },
         quantity: 2,
       },
@@ -34,12 +45,14 @@ export function fetchCartProducts() {
             "What is Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum has been the industry",
           price: 1.99,
           belongsTo: [0, 1],
+          imageUrl:"https://picsum.photos/200/300",
         },
         quantity: 3,
       },
     ],
   };
 }
+
 export function fetchUserPurchases() {
   return {
     type: SET_USER_PURCHASES,

@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import history from '../../history'
+import history from "../../history";
 class Header extends Component {
   render() {
     return (
       <div className="header">
-        <img src="http://via.placeholder.com/50x50" />
+        <img src="//logo.clearbit.com/spotify.com" />
         <div className="header-links">
           {this.props.headerLinks.map((link) => {
             return (
